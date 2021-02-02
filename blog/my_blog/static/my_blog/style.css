@@ -1,0 +1,30 @@
+.container{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;  
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "header header header header"
+  "sidebar main main ."
+  "footer footer footer footer ";
+  justify-items: center;
+}
+.header{
+    grid-area: header;
+    background-color: darkslategrey;
+    color: honeydew;
+    width: 100vw;
+    padding-left: 50%;
+    
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+}

@@ -1,0 +1,17 @@
+{% extends 'my_blog/Base.html' %}
+    {% block title %} <title>My blog</title>
+    {% endblock %}
+   
+    {% block sidebar %}
+    <div class="sidebar">{% for obj in category_list %}<h2>{{obj.title}}</h2>{% endfor %}</div>
+    {% endblock %}
+    <div class="main">
+        {% block main %}
+
+        {% endblock %}
+
+    </div>
+
+</div>
+</body>
+</html>
