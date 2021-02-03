@@ -34,7 +34,7 @@ class CategoryView(DetailView):
     template_name = "my_blog/Category.html"
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
-        context["cat"] = BlogCategory.objects.all()
+        context["title"] = BlogPost.objects.filter(slug = self.kwargs["slug"])
         return context
     
     

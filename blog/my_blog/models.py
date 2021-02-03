@@ -5,10 +5,11 @@ from django.urls import reverse
 
 class BlogCategory(models.Model):
     title = models.CharField(max_length = 20)
+    slug  = models.SlugField(max_length = 20, null=True)
     def __str__(self):
         return self.title
     def get_absolute_url(self):
-        return reverse("category",kwargs={'str':self.title})
+        return reverse("category",kwargs={'slug':self.slug})
 
 
 class BlogPost(models.Model):
@@ -29,4 +30,4 @@ class BlogPost(models.Model):
         class Meta:
             ordering = ("-date")
     def get_absolute_url(self):
-        return reverse('post',kwargs={'slug':self.slug})
+        return reverse('category',kwargs={'slug':self.slug})

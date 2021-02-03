@@ -4,6 +4,6 @@ from .views import MultimodelView,BlogView,CategoryView
 from . import views
 urlpatterns = [
     path("",MultimodelView.as_view(), name = "home"),
-    path("<slug:slug>",BlogView.as_view(),name = "post"),
-    path("<slug:title>",CategoryView.as_view(),name="category")
-]
+    path("<slug:slug>",CategoryView.as_view(),name="category"),
+    path("<slug:slug>",BlogView.as_view(),name = "post")
+    ]

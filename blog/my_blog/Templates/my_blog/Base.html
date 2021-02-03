@@ -13,7 +13,7 @@
         <div><h2><a class="link" href="{% url 'home' %}">Home</a></h2></div><h3>Welcome to my blog</h3></div>
     {% block sidebar %}
     <div class="sidebar">{% for obj in CateModel %}<h2>
-        {{obj.title}}- {{ obj.blog_post.count }}</h2>{% endfor %}</div>
+        <a href="{{ obj.get_absolute_url }}"> {{ obj.title }}</a></h2>{% endfor %}</div>
     {% endblock %}
     <div class="main">
         {% block main %}
