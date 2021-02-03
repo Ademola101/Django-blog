@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.urls import path,include
-from .views import CategoryList
+from .views import MultimodelView,BlogView,CategoryView
+from . import views
 urlpatterns = [
-    path("",CategoryList.as_view(), name = "home")
+    path("",MultimodelView.as_view(), name = "home"),
+    path("<slug:slug>",BlogView.as_view(),name = "post"),
+    path("<str:title>",CategoryView.as_view(),name="category")
 ]

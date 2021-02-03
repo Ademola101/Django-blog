@@ -1,0 +1,15 @@
+{% extends 'my_blog/Base.html' %}
+
+{% block title %}{% for obj in Post %} <title>{{ obj.title }} </title>{% endfor %}
+
+    {% endblock %}
+    <div class="main">{% block main %}
+
+        {% for obj in Post %}
+        <h1>
+{{ obj.title }} 
+        </h1>
+<div>{{ obj.body }}</div>
+{% endfor %}
+    </div>{% endblock %}
+

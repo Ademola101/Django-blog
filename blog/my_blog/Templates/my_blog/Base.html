@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="{% static 'my_blog/style.css' %}">
 </head>
 <body><div class="container">
-    <div class="header"><h1>Welcome to my blog</h1></div>
+    <div class="header">
+        <div><h2><a class="link" href="{% url 'home' %}">Home</a></h2></div><h3>Welcome to my blog</h3></div>
     {% block sidebar %}
+    <div class="sidebar">{% for obj in CateModel %}<h2>
+        {{obj.title}}- {{ obj.blog_post.count }}</h2>{% endfor %}</div>
     {% endblock %}
     <div class="main">
         {% block main %}

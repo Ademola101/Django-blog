@@ -2,12 +2,13 @@
     {% block title %} <title>My blog</title>
     {% endblock %}
    
-    {% block sidebar %}
-    <div class="sidebar">{% for obj in category_list %}<h2>{{obj.title}}</h2>{% endfor %}</div>
-    {% endblock %}
     <div class="main">
-        {% block main %}
-
+        {% block main %}<h3>
+            Latest posts
+        </h3>
+{% for post in PostModel %}
+<div> <a href="{{ post.get_absolute_url }}"> {{ post.title }}</a></div>
+{% endfor %}
         {% endblock %}
 
     </div>
