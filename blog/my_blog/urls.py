@@ -5,5 +5,5 @@ from . import views
 urlpatterns = [
     path("",MultimodelView.as_view(), name = "home"),
     path("<slug:slug>",BlogView.as_view(),name = "post"),
-    path("<str:title>",CategoryView.as_view(),name="category")
+    path("<slug:title>",CategoryView.as_view(),name="category")
 ]
