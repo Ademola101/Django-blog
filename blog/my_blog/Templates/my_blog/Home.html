@@ -7,7 +7,7 @@
             Latest posts
         </h3>
 {% for post in PostModel %}
-<div> <a href="{{ post.get_absolute_url }}"> {{ post.title }}</a></div>
+<div> <a href="{{ post.get_absolute_url }}"> {{ post.slug }}</a></div>
 {% endfor %}
         {% endblock %}
 
