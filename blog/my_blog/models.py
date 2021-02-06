@@ -10,6 +10,8 @@ class BlogCategory(models.Model):
         return self.title
     def get_absolute_url(self):
         return reverse("category",kwargs={'slug':self.title})
+        
+            
 
 
 class BlogPost(models.Model):
@@ -28,6 +30,6 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
         class Meta:
-            ordering = ("-date")
+            ordering = ("date")
     def get_absolute_url(self):
-        return reverse('post',kwargs={'slug':self.slug})
+        return f"category/new/{self.slug}"
