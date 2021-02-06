@@ -47,3 +47,8 @@ class CreateBlog(CreateView):
         "title","body","slug","category"
     ]
     success_url = reverse_lazy('home')    
+    def form_valid(self,form):
+        post = form.save(commit=False)
+        post.author = self.request.user
+        post.save()
+        return super(CreateBlog,self).form_valid(form)
