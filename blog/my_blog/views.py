@@ -36,8 +36,10 @@ class CategoryView(DetailView):
     template_name = "my_blog/Category.html"
     def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
+        context['title'] = BlogCategory.objects.filter(slug = self.kwargs['slug'])
         context["Post"] = BlogPost.objects.filter(slug = self.kwargs["slug"])
-        context["Cat"] = BlogCategory.objects.filter(slug = self.kwargs["slug"])
+        context["Cat"] = get_object_or_404(BlogCategory,slug =self.kwargs['slug'])
+        context['npost'] = context['Cat'].blogpost.all
         return context
 class CreateCategory(CreateView):
     model = BlogCategory
