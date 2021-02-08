@@ -2,8 +2,8 @@
 {% block title %}{% for obj in title %} <title>{{ obj.title }} </title>{% endfor %}{% endblock %}
 <div class="main">{% block main %}
     {% for posts in npost %}
-    <div>
-   {{ posts.body }} 
+    <div> <a href="{{ posts.get_absolute_url }}">{{ posts.body }}</a>
+    
     
     </div>
 {% endfor %}
