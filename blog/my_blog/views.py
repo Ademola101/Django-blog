@@ -29,6 +29,7 @@ class BlogView(DetailView):
         context = super().get_context_data(**kwargs)
         context["Post"] = BlogPost.objects.filter(slug = self.kwargs["slug"])
         context["CateModel"] = BlogCategory.objects.all()
+        
         return context
 class CategoryView(DetailView):
     model = BlogCategory
