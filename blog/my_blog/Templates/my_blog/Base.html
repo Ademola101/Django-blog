@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %} <title>My blog</title>
     {% endblock %}
+    <link rel="stylesheet" href="{% static 'my_blog/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'my_blog/style.css' %}">
 </head>
 <body><div class="container">
     <div class="header">
         <div><h2><a class="link" href="{% url 'home' %}">Home</a></h2></div><h3>Welcome to my blog</h3></div>
     {% block sidebar %}
-    <div class="sidebar">{% for obj in CateModel %}<h2>
-        <a href="{{ obj.get_absolute_url }}"> {{ obj.title }}</a></h2>{% endfor %}</div>
-    {% endblock %}
+    <div class="sidebar"> <div class="dropdown"> 
+        <button class="btn btn-primary dropdown-toggle" 
+        type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Category</button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% for obj in CateModel %}
+            <li> <a class="dropdown-item" href="{{ obj.get_absolute_url }}"> 
+                {{ obj.title }} </a></li>
+            {% endfor %}</ul>
+    </div><div>{% endblock %}
+       
+    
     <div class="main">
         {% block main %}
 
@@ -24,7 +33,10 @@
 
 </div> <div class="footer">
 {% block footer %} 
-Copyright© Ademola Ogunmokun, 2021</div>
+<div class="small"> © Ademola Ogunmokun, 2021</div></div>
 {% endblock %}
+<script src="{% static 'my_blog/popper.min.js' %}"></script>
+<script src="{% static 'my_blog/bootstrap.min.js' %}"></script>
+<script src="{% static 'my_blog/jquery-3.5.0.min.js' %}"></script>
 </body>
 </html>

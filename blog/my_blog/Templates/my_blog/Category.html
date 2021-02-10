@@ -1,6 +1,8 @@
 {% extends 'my_blog/Base.html' %}
 {% block title %}{% for obj in title %} <title>{{ obj.title }} </title>{% endfor %}{% endblock %}
-<div class="main">{% block main %}
+<div class="main">{% block main %} 
+    {% for obj in title %} <h3>{{obj.title}} blogs</h3>
+    {% endfor %}
     {% for posts in npost %}
     <div> <a href="{{ posts.get_absolute_url }}">{{ posts.body }}</a>
     
