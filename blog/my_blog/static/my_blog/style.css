@@ -35,7 +35,9 @@
 
 .footer{
     grid-area: footer;
-}
+position: absolute;
+top: 95%;
+right: 50%;}
 .postlink{color: white;
     position: absolute;
 }
