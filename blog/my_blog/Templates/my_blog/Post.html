@@ -6,8 +6,8 @@
     {% block main %}
     <div class="container-fluid">
         {% for obj in Post %}
-        <p class="h3"> <u>
-{{ obj.title }} 
+        <p class="h3"> <u> <em>
+{{ obj.title }} </em>
 </u></p>
 <div class="text-muted">{{ obj.body_as_markdown}}</div>
 {% endfor %}
