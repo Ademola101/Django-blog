@@ -3,8 +3,8 @@
 {% block title %}{% for obj in Post %} <title>{{ obj.title }} </title>{% endfor %}
 
     {% endblock %}
-    <div class="main">{% block main %}
-
+    {% block main %}
+    <div class="container-fluid">
         {% for obj in Post %}
         <h1>
 {{ obj.title }} 
