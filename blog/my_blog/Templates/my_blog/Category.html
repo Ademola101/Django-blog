@@ -4,7 +4,7 @@
     {% for obj in title %} <h3>{{obj.title}} blogs</h3>
     {% endfor %}
     {% for posts in npost %}
-    <div> <a href="{{ posts.get_absolute_url }}">{{ posts.body }}</a>
+    <div> <a href="{{ posts.get_absolute_url }}">{{ posts.title }}</a>
     
     
     </div>
@@ -12,6 +12,4 @@
 </div>
 {% endblock %}
 <div>a</div>
-{% block sidebar %}
-    {% endblock %}
     
