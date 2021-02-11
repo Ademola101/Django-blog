@@ -1,4 +1,5 @@
 {% load static %}
+{% load blog_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +22,12 @@
             <li> <a class="dropdown-item" href="{{ obj.get_absolute_url }}"> 
                 {{ obj.title }} </a></li>
             {% endfor %}</ul>
-    </div><div>{% endblock %}
+    </div></div>{% endblock %}
        
     
     <div class="main">
         {% block main %}
-
-        {% endblock %}
+            {% endblock %}
  
     </div>
 

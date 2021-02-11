@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from markdown import markdown
+from django.utils.html import mark_safe
 # Create your models here.
 
 class BlogCategory(models.Model):
@@ -33,3 +35,5 @@ class BlogPost(models.Model):
             ordering = ("date")
     def get_absolute_url(self):
         return f"category/new/{self.slug}"
+    def body_as_markdown(self):
+        return mark_safe(markdown(self.body,safe_mode = 'escape'))

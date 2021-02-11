@@ -6,10 +6,10 @@
     {% block main %}
     <div class="container-fluid">
         {% for obj in Post %}
-        <h1>
+        <p class="h3"> <u>
 {{ obj.title }} 
-        </h1>
-<div>{{ obj.body }}</div>
+</u></p>
+<div class="text-muted">{{ obj.body_as_markdown}}</div>
 {% endfor %}
     </div>{% endblock %}
 
