@@ -19,7 +19,7 @@ class BlogCategory(models.Model):
 class BlogPost(models.Model):
     author = models.ForeignKey(User,on_delete = models.CASCADE,null=True)
     date  = models.DateTimeField(auto_now_add = True)
-    body = models.TextField(max_length = 350, null= True)
+    body = models.TextField(max_length = 1000, null= True)
     title = models.CharField(max_length = 100)
     slug = models.SlugField(null=True)
     status_choices  = [

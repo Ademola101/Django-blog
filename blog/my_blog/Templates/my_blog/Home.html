@@ -2,8 +2,9 @@
     {% block title %} <title>My blog</title>
     {% endblock %}
    
-    <div class="main">
-        {% block main %}<h3>
+    
+        {% block main %}
+        <h3>
             Latest posts
         </h3>
 {% for post in PostModel %}
@@ -13,6 +14,6 @@
 
     </div>
 
-</div>
+</div>}
 </body>
 </html>
