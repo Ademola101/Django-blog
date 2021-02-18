@@ -9,7 +9,7 @@
         {% for obj in Post %}
         <p class="h3"> <u> <em>
 {{ obj.title }} </em>
-</u></p><small class="small">By {{ obj.author.first_name }} posted at {{ obj.date }} </small>
+</u></p><small class="small">By {{ obj.author.first_name }} posted on {{ obj.date }} </small>
 <div class="text-muted">{{ obj.body_as_markdown}}</div>
 {% endfor %}
     </div>{% endblock %}
