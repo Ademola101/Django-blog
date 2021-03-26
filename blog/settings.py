@@ -25,7 +25,7 @@ SECRET_KEY = 'tx!kyj*o@gsd#k%lbf(f@&6j$nfb79r=xkac)871xyo^c-+9lw'
 DEBUG = False
 
 ALLOWED_HOSTS = ["https://ademola10.herokuapp.com/"]
-#ALLOWED_HOSTS = ["192.168.43.167"]
+#ALLOWED_HOSTS = ["192.168.43.167"k]
 
 
 # Application definition
