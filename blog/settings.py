@@ -24,7 +24,7 @@ SECRET_KEY = 'tx!kyj*o@gsd#k%lbf(f@&6j$nfb79r=xkac)871xyo^c-+9lw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://ademola.herokuapp.com/]
+ALLOWED_HOSTS = ["https://ademola.herokuapp.com/"]
 #ALLOWED_HOSTS = ["192.168.43.167"]
 
 
