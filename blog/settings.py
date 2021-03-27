@@ -31,9 +31,8 @@ ALLOWED_HOSTS = ["https://ademola10.herokuapp.com/"]
 # Application definition
 
 INSTALLED_APPS = [
-    
-    'django.contrib.admin',
     "my_blog.apps.MyBlogConfig",
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -56,7 +55,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
