@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'tx!kyj*o@gsd#k%lbf(f@&6j$nfb79r=xkac)871xyo^c-+9lw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["https://ademola10.herokuapp.com/"]
 #ALLOWED_HOSTS = ["192.168.43.167"k]
