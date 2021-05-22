@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
 import django_heroku
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv("SECRET_KEY"))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["https://ademola10.herokuapp.com/"]
+#ALLOWED_HOSTS = ["https://ademola10.herokuapp.com/"]
 #ALLOWED_HOSTS = ["192.168.43.167"k]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -122,4 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 django_heroku.settings(locals())
-load_dotenv()
+#load_dotenv()

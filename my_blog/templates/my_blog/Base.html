@@ -10,20 +10,26 @@
     <link rel="stylesheet" href="{% static 'my_blog/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'my_blog/style.css' %}">
 </head>
-<body><div class="container">
-    <div class="header">
-        <div><h2><a class="link" href="{% url 'home' %}">Home</a></h2></div><h3>welcome to my Blog</h3></div>
-    {% block sidebar %}
-    <div> <div class="dropdown"> 
-        <button class="btn btn-primary dropdown-toggle" 
-        type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Category</button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+<body> <div class="container">
+    <header class="blog-header py-3">
+       <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="{% url 'home' %}"> Home</a>
+    </div>
+   </div></header>
+        {% block sidebar %}
+        <div class="nav-scroller py-1 mb-2">
             {% for obj in CateModel %}
-            <li> <a class="dropdown-item" href="{{ obj.get_absolute_url }}"> 
-                {{ obj.title }} </a></li>
-            {% endfor %}</ul>
-    </div></div>{% endblock %}
-       
+            <nav class="nav d-flex justify-content-between">
+               
+                <a class="p-2 link-secondary" href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+            </nav>
+        </div>
+        {% endfor %}
+       {% endblock %}
+    
+    </header>
+           
     
     <div class="main" id="main">
         {% block main %}
@@ -35,6 +41,8 @@
 {% block footer %} 
 <div class="small"> © Ademola Ogunmokun, 2021. Contact me on <a href="http://www.twitter.com/ademola_isr">Twitter</a> for any enquiries</div></div>
 {% endblock %}
+</div>
+    
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 <script src="{% static 'my_blog/main.js' %}"></script>
 </body>
